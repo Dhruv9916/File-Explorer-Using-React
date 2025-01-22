@@ -9,7 +9,13 @@ const useTraverseTree = () => {
       });
       return tree;
     }
-   
+
+    let lastestNode = [];
+    lastestNode = tree.items.map((ob) => {
+      return insertNode(ob, folderId, item, isFolder);
+    });
+
+    return {...tree,items: lastestNode };
   }
 
   return { insertNode };
